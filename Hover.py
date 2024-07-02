@@ -1,8 +1,7 @@
 import time
-
 from pymultiwii import MultiWii
 
-# Replace '/dev/ttyUSB0' with the correct serial port for your setup
+# Replace 'COM3' with the correct serial port for your setup
 board = MultiWii("COM3")
 
 # Define the tolerance range for hovering (in degrees for lat/lon and meters for altitude)
@@ -52,6 +51,8 @@ def main():
                 print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Drone has been hovering for the last 15 seconds.")
             else:
                 print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - Drone is not hovering.")
+        else:
+            print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - No current position data available.")
 
         time.sleep(1)
 
